@@ -16,18 +16,12 @@ password attempt.`,
 
   inputs: {
 
-    // emailAddress: {
-    //   description: 'The email to try in this attempt, e.g. "irl@example.com".',
-    //   type: 'string',
-    //   required: true
-    // },
-    userName:  {
-      required: true,
+    emailAddress: {
+      description: 'The email to try in this attempt, e.g. "irl@example.com".',
       type: 'string',
-      example: 'Frida Kahlo de Rivera',
-      description: 'The user\'s full name.',
+      required: true
     },
-
+    
     password: {
       description: 'The unencrypted password to try in this attempt, e.g. "passwordlol".',
       type: 'string',
@@ -81,8 +75,7 @@ and exposed as \`req.me\`.)`
     // (note that we lowercase it to ensure the lookup is always case-insensitive,
     // regardless of which database we're using)
     var userRecord = await User.findOne({
-      // emailAddress: inputs.emailAddress.toLowerCase(),
-      userName: inputs.userName.toLowerCase(),
+      emailAddress: inputs.emailAddress.toLowerCase(),
     });
 
     // If there was no matching user, respond thru the "badCombo" exit.

@@ -16,8 +16,7 @@ parasails.registerPage('login', {
     // A set of validation rules for our form.
     // > The form will not be submitted if these are invalid.
     formRules: {
-      // emailAddress: { required: true, isEmail: true },
-      userName: { required: true},
+      emailAddress: { required: true, isEmail: true },
       password: { required: true },
     },
 
