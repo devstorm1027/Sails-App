@@ -12,14 +12,14 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    // emailAddress: {
-    //   type: 'string',
-    //   required: true,
-    //   unique: true,
-    //   isEmail: true,
-    //   maxLength: 200,
-    //   example: 'carol.reyna@microsoft.com'
-    // },
+    emailAddress: {
+      type: 'string',
+      required: true,
+      unique: true,
+      isEmail: true,
+      maxLength: 200,
+      example: 'carol.reyna@microsoft.com'
+    },
 
     password: {
       type: 'string',
@@ -29,22 +29,14 @@ module.exports = {
       example: '2$28a8eabna301089103-13948134nad'
     },
 
-    // fullName: {
-    //   type: 'string',
-    //   required: true,
-    //   description: 'Full representation of the user\'s name',
-    //   maxLength: 120,
-    //   example: 'Lisa Microwave van der Jenny'
-    // },
-
-    userName: {
+    fullName: {
       type: 'string',
       required: true,
       description: 'Full representation of the user\'s name',
       maxLength: 120,
       example: 'Lisa Microwave van der Jenny'
     },
-
+    
     isSuperAdmin: {
       type: 'boolean',
       description: 'Whether this user is a "super admin" with extra permissions, etc.',
@@ -120,34 +112,34 @@ without necessarily having a billing card.`
       extendedDescription: 'To ensure PCI compliance, this data comes from Stripe, where it reflects the user\'s default payment source.'
     },
 
-//     emailProofToken: {
-//       type: 'string',
-//       description: 'A pseudorandom, probabilistically-unique token for use in our account verification emails.'
-//     },
+    emailProofToken: {
+      type: 'string',
+      description: 'A pseudorandom, probabilistically-unique token for use in our account verification emails.'
+    },
 
-//     emailProofTokenExpiresAt: {
-//       type: 'number',
-//       description: 'A JS timestamp (epoch ms) representing the moment when this user\'s `emailProofToken` will expire (or 0 if the user currently has no such token).',
-//       example: 1502844074211
-//     },
+    emailProofTokenExpiresAt: {
+      type: 'number',
+      description: 'A JS timestamp (epoch ms) representing the moment when this user\'s `emailProofToken` will expire (or 0 if the user currently has no such token).',
+      example: 1502844074211
+    },
 
-//     emailStatus: {
-//       type: 'string',
-//       isIn: ['unconfirmed', 'changeRequested', 'confirmed'],
-//       defaultsTo: 'confirmed',
-//       description: 'The confirmation status of the user\'s email address.',
-//       extendedDescription:
-// `Users might be created as "unconfirmed" (e.g. normal signup) or as "confirmed" (e.g. hard-coded
-// admin users).  When the email verification feature is enabled, new users created via the
-// signup form have \`emailStatus: 'unconfirmed'\` until they click the link in the confirmation email.
-// Similarly, when an existing user changes their email address, they switch to the "changeRequested"
-// email status until they click the link in the confirmation email.`
-//     },
+    emailStatus: {
+      type: 'string',
+      isIn: ['unconfirmed', 'changeRequested', 'confirmed'],
+      defaultsTo: 'confirmed',
+      description: 'The confirmation status of the user\'s email address.',
+      extendedDescription:
+`Users might be created as "unconfirmed" (e.g. normal signup) or as "confirmed" (e.g. hard-coded
+admin users).  When the email verification feature is enabled, new users created via the
+signup form have \`emailStatus: 'unconfirmed'\` until they click the link in the confirmation email.
+Similarly, when an existing user changes their email address, they switch to the "changeRequested"
+email status until they click the link in the confirmation email.`
+    },
 
-//     emailChangeCandidate: {
-//       type: 'string',
-//       description: 'The (still-unconfirmed) email address that this user wants to change to.'
-//     },
+    emailChangeCandidate: {
+      type: 'string',
+      description: 'The (still-unconfirmed) email address that this user wants to change to.'
+    },
 
     tosAcceptedByIp: {
       type: 'string',
